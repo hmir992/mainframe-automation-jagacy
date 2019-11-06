@@ -1,12 +1,20 @@
 # jagacy-cucumber-bdd-example
 Automated Acceptance tests for Mainframe Green screens with Jagacy &amp; Cucumber
 
-This example requires Jagacy3270 library. Please download the Jagacy evaluation bundle from http://www.jagacy.com/downloads.html and copy  ```jagacy3270.jar``` file from the bundle to ```src/test/resources/lib``` folder
+This example requires Jagacy3270 library from 2015 Please download the Jagacy evaluation bundle from https://web.archive.org/web/20160731191730/http://jagacy.com/Jagacy3270_evaluation.zip and copy  ```jagacy3270.jar``` file from the bundle to ```src/test/resources/lib``` folder
 
 To run the example:
 
 ```
-mvn clean test
+mvn clean test or right click root of project in eclipse -> run as -> maven install
+```
+
+```
+jagacy.properties contains the mainframe automation URL information so it can pointed to different servers
+```
+
+```
+jagacy.jar in this project is from the 2015 build and can be downloaded here : https://web.archive.org/web/20160731191730/http://jagacy.com/Jagacy3270_evaluation.zip
 ```
 
 This will launch a test on sample interface provided with Jagacy
