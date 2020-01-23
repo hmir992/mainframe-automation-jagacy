@@ -6,7 +6,7 @@ This example requires Jagacy3270 library from 2015 Please download the Jagacy ev
 To run the example:
 
 ```
-mvn clean test or right click RunCukesTest.java in eclipse -> run as -> junit test
+right click RunCukesTest.java in eclipse -> run as -> junit test
 
 It will not work in office SQS wifi it has to be connected to an open wifi for the project to work
 ```
