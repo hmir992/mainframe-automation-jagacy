@@ -6,6 +6,7 @@ import com.example.fields.LabelField;
 import com.jagacy.Key;
 import com.jagacy.util.JagacyException;
 
+import java.io.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -55,9 +56,9 @@ public class PhonbookSearchScreen {
      */
     public final void searchByFirstOrMiddleName(final String firstOrMiddleName)
             throws JagacyException, InterruptedException {
-    	Thread.sleep(7000);
+    	Thread.sleep(2000);
         session.setEntryFieldValue(firstOrMiddleNameEntryField, firstOrMiddleName);
-        Thread.sleep(7000);
+        Thread.sleep(2000);
         session.writeKey(Key.ENTER);
         session.waitForChange(session.DEFAULT_TIMEOUT);
     }
@@ -69,11 +70,12 @@ public class PhonbookSearchScreen {
      * @throws InterruptedException 
      */
     public final List<String> getResults() throws JagacyException, InterruptedException {
-    	Thread.sleep(7000);
+    	Thread.sleep(2000);
         List<String> results = new ArrayList<>();
         for (int row = 5; row <= 15; row++) {
             if (!session.readPosition(row, 2, 1).trim().equals("")) {
                 results.add(session.readPosition(row, 2, 75).trim());
+                System.out.println(session.readPosition(row, 2, 75).trim());
             }
         }
         return results;

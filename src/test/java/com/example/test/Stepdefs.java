@@ -46,7 +46,7 @@ public class Stepdefs {
     	
         homeScreen = new HomeScreen(session);
         scenario.embed(session.getScreenshot(), "image/png");
-        Thread.sleep(10000);
+        Thread.sleep(1000);
         phonbookMenuScreen = homeScreen.openPhonbook();
 
     }
@@ -59,6 +59,14 @@ public class Stepdefs {
         phonbookSearchScreen.searchByFirstOrMiddleName(q);
 
     }
+    
+    @When("^search for faculty last name \"([^\"]*)\"$")
+    public void search_for_faculty_last_name(String q) throws Throwable {
+        scenario.embed(session.getScreenshot(), "image/png");
+        phonbookSearchScreen = phonbookMenuScreen.openFacultyStaffListing();
+        phonbookSearchScreen.searchByLastname(q);
+    }
+
 
     @Then("^I should see the results matching with my search criteria$")
     public void i_should_see_the_results_matching_with_my_search_criteria(List<String> records) throws Throwable {

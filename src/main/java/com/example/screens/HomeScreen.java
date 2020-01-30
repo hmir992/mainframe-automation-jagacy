@@ -27,7 +27,7 @@ public class HomeScreen {
         	//Thread.sleep(100000);
             //throw new IllegalStateException("Not Home screen!");
         }
-        Thread.sleep(10000);
+        Thread.sleep(3000);
         if (session.getCrc32() != Long.decode(screenCrc)) {
         	//Thread.sleep(100000);
             //throw new IllegalStateException("Home Screen has been changed!");
